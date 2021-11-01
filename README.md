@@ -5,7 +5,7 @@ Open source project
 - Author name: Filip Ljubić
 - Version: 1.0
 - Language: English
-- Metadata of books: id, title, description, date of publishing, isbn, genres, original language, authors, country
+- Books metadata: id, title, description, date of publishing, isbn, genres, original language, authors, country
 - Date format: UTC
 - Contact email: f.ljubic7@hotmail.com
 
