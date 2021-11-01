@@ -3,7 +3,7 @@
                 "_id": "617fc18da7c488ce95fb5fe0",
                 "title": "Pride and Prejudice",
                 "description": "When Elizabeth Bennet first meets eligible bachelor Fitzwilliam Darcy, she thinks him arrogant and conceited; he is indifferent to her good looks and lively mind. When she later discovers that Darcy has involved himself in the troubled relationship between his friend Bingley and her beloved sister Jane, she is determined to dislike him more than ever. In the sparkling comedy of manners that follows, Jane Austen shows the folly of judging by first impressions and superbly evokes the friendships, gossip and snobberies of provincial middle-class life.",
-                "published": "2012-06-11 22:00:00",
+                "published": "1813-01-27 22:36:00",
                 "isbn": 9780141199078,
                 "genres": [
                         "Fiction",
@@ -16,7 +16,8 @@
                                 "name": "Jane",
                                 "surname": "Austen"
                         }
-                ]
+                ],
+                "country": "United Kingdom"
         },
         {
                 "_id": "617fc40ba7c488ce95fb5fe8",
@@ -38,7 +39,8 @@
                                 "name": "Harper",
                                 "surname": "Lee"
                         }
-                ]
+                ],
+                "country": "United States"
         },
         {
                 "_id": "617fc609a7c488ce95fb5fe9",
@@ -55,7 +57,8 @@
                                 "name": "F.Scott",
                                 "surname": "Fitzgerald"
                         }
-                ]
+                ],
+                "country": "United States"
         },
         {
                 "_id": "617fc706a7c488ce95fb5fec",
@@ -75,7 +78,8 @@
                                 "name": "Truman",
                                 "surname": "Capote"
                         }
-                ]
+                ],
+                "country": "United States"
         },
         {
                 "_id": "617fc77ba7c488ce95fb5fee",
@@ -92,7 +96,8 @@
                                 "name": "Jean",
                                 "surname": "Rhys"
                         }
-                ]
+                ],
+                "country": "United Kingdom"
         },
         {
                 "_id": "617fc800a7c488ce95fb5fef",
@@ -110,7 +115,8 @@
                                 "name": "Aldous",
                                 "surname": "Huxley"
                         }
-                ]
+                ],
+                "country": "United Kingdom"
         },
         {
                 "_id": "617fc872a7c488ce95fb5ff1",
@@ -130,7 +136,8 @@
                                 "name": "Dodie",
                                 "surname": "Smith"
                         }
-                ]
+                ],
+                "country": "United Kingdom"
         },
         {
                 "_id": "617fc8e7a7c488ce95fb5ff2",
@@ -153,7 +160,8 @@
                                 "name": "Charlotte",
                                 "surname": "Bronte"
                         }
-                ]
+                ],
+                "country": "United Kingdom"
         },
         {
                 "_id": "617fc987a7c488ce95fb5ff3",
@@ -172,7 +180,8 @@
                                 "name": "Fyodor",
                                 "surname": "Dostoevsky"
                         }
-                ]
+                ],
+                "country": "Russia"
         },
         {
                 "_id": "617fca03a7c488ce95fb5ff4",
@@ -189,6 +198,7 @@
                                 "name": "Jack",
                                 "surname": "London"
                         }
-                ]
+                ],
+                "country": "United States"
         }
 ]
