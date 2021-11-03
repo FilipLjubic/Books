@@ -1,5 +1,5 @@
 # Books
-Open source project
+Open source project with open data about books
 
 ## Dataset description
 - Author name: Filip Ljubić
