@@ -1,0 +1,265 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "title": "The root schema",
+    "description": "The root schema comprises the entire JSON document.",
+    "default": [],
+    "examples": [
+        [
+            {
+                "_id": "617fc18da7c488ce95fb5fe0",
+                "title": "Pride and Prejudice",
+                "description": "When Elizabeth Bennet first meets eligible bachelor Fitzwilliam Darcy, she thinks him arrogant and conceited; he is indifferent to her good looks and lively mind. When she later discovers that Darcy has involved himself in the troubled relationship between his friend Bingley and her beloved sister Jane, she is determined to dislike him more than ever. In the sparkling comedy of manners that follows, Jane Austen shows the folly of judging by first impressions and superbly evokes the friendships, gossip and snobberies of provincial middle-class life.",
+                "published": "1813-01-27 22:36:00",
+                "isbn": 9780141199078,
+                "genres": [
+                    "Fiction",
+                    "Romance novel, Satire",
+                    "Novel of manners"
+                ],
+                "originalLanguage": "English",
+                "authors": [
+                    {
+                        "name": "Jane",
+                        "surname": "Austen"
+                    }
+                ],
+                "country": "United Kingdom"
+            },
+            {
+                "_id": "617fc40ba7c488ce95fb5fe8",
+                "title": "To Kill A Mockingbird",
+                "description": "A lawyer's advice to his children as he defends the real mockingbird of Harper Lee's classic novel - a black man falsely charged with the rape of a white girl. Through the young eyes of Scout and Jem Finch, Harper Lee explores with exuberant humour the irrationality of adult attitudes to race and class in the Deep South of the 1930s. The conscience of a town steeped in prejudice, violence and hypocrisy is pricked by the stamina of one man's struggle for justice. But the weight of history will only tolerate so much.",
+                "published": "1960-11-06 23:00:00",
+                "isbn": 9781784752637,
+                "genres": [
+                    "Novel",
+                    "Bildungsroman",
+                    "Southern Gothic",
+                    "Thriller",
+                    "Domestic Fiction",
+                    "Legal Story"
+                ],
+                "originalLanguage": "English",
+                "authors": [
+                    {
+                        "name": "Harper",
+                        "surname": "Lee"
+                    }
+                ],
+                "country": "United States"
+            }
+        ]
+    ],
+    "additionalItems": true,
+    "items": {
+        "$id": "#/items",
+        "anyOf": [
+            {
+                "$id": "#/items/anyOf/0",
+                "type": "object",
+                "title": "The first anyOf schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": {},
+                "examples": [
+                    {
+                        "_id": "617fc18da7c488ce95fb5fe0",
+                        "title": "Pride and Prejudice",
+                        "description": "When Elizabeth Bennet first meets eligible bachelor Fitzwilliam Darcy, she thinks him arrogant and conceited; he is indifferent to her good looks and lively mind. When she later discovers that Darcy has involved himself in the troubled relationship between his friend Bingley and her beloved sister Jane, she is determined to dislike him more than ever. In the sparkling comedy of manners that follows, Jane Austen shows the folly of judging by first impressions and superbly evokes the friendships, gossip and snobberies of provincial middle-class life.",
+                        "published": "1813-01-27 22:36:00",
+                        "isbn": 9780141199078,
+                        "genres": [
+                            "Fiction",
+                            "Romance novel, Satire",
+                            "Novel of manners"
+                        ],
+                        "originalLanguage": "English",
+                        "authors": [
+                            {
+                                "name": "Jane",
+                                "surname": "Austen"
+                            }
+                        ],
+                        "country": "United Kingdom"
+                    }
+                ],
+                "required": [
+                    "_id",
+                    "title",
+                    "description",
+                    "published",
+                    "isbn",
+                    "genres",
+                    "originalLanguage",
+                    "authors",
+                    "country"
+                ],
+                "properties": {
+                    "_id": {
+                        "$id": "#/items/anyOf/0/properties/_id",
+                        "type": "string",
+                        "title": "The _id schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "617fc18da7c488ce95fb5fe0"
+                        ]
+                    },
+                    "title": {
+                        "$id": "#/items/anyOf/0/properties/title",
+                        "type": "string",
+                        "title": "The title schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "Pride and Prejudice"
+                        ]
+                    },
+                    "description": {
+                        "$id": "#/items/anyOf/0/properties/description",
+                        "type": "string",
+                        "title": "The description schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "When Elizabeth Bennet first meets eligible bachelor Fitzwilliam Darcy, she thinks him arrogant and conceited; he is indifferent to her good looks and lively mind. When she later discovers that Darcy has involved himself in the troubled relationship between his friend Bingley and her beloved sister Jane, she is determined to dislike him more than ever. In the sparkling comedy of manners that follows, Jane Austen shows the folly of judging by first impressions and superbly evokes the friendships, gossip and snobberies of provincial middle-class life."
+                        ]
+                    },
+                    "published": {
+                        "$id": "#/items/anyOf/0/properties/published",
+                        "type": "string",
+                        "title": "The published schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "1813-01-27 22:36:00"
+                        ]
+                    },
+                    "isbn": {
+                        "$id": "#/items/anyOf/0/properties/isbn",
+                        "type": "integer",
+                        "title": "The isbn schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": 0,
+                        "examples": [
+                            9780141199078
+                        ]
+                    },
+                    "genres": {
+                        "$id": "#/items/anyOf/0/properties/genres",
+                        "type": "array",
+                        "title": "The genres schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": [],
+                        "examples": [
+                            [
+                                "Fiction",
+                                "Romance novel, Satire"
+                            ]
+                        ],
+                        "additionalItems": true,
+                        "items": {
+                            "$id": "#/items/anyOf/0/properties/genres/items",
+                            "anyOf": [
+                                {
+                                    "$id": "#/items/anyOf/0/properties/genres/items/anyOf/0",
+                                    "type": "string",
+                                    "title": "The first anyOf schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": "",
+                                    "examples": [
+                                        "Fiction",
+                                        "Romance novel, Satire"
+                                    ]
+                                }
+                            ]
+                        }
+                    },
+                    "originalLanguage": {
+                        "$id": "#/items/anyOf/0/properties/originalLanguage",
+                        "type": "string",
+                        "title": "The originalLanguage schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "English"
+                        ]
+                    },
+                    "authors": {
+                        "$id": "#/items/anyOf/0/properties/authors",
+                        "type": "array",
+                        "title": "The authors schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": [],
+                        "examples": [
+                            [
+                                {
+                                    "name": "Jane",
+                                    "surname": "Austen"
+                                }
+                            ]
+                        ],
+                        "additionalItems": true,
+                        "items": {
+                            "$id": "#/items/anyOf/0/properties/authors/items",
+                            "anyOf": [
+                                {
+                                    "$id": "#/items/anyOf/0/properties/authors/items/anyOf/0",
+                                    "type": "object",
+                                    "title": "The first anyOf schema",
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "default": {},
+                                    "examples": [
+                                        {
+                                            "name": "Jane",
+                                            "surname": "Austen"
+                                        }
+                                    ],
+                                    "required": [
+                                        "name",
+                                        "surname"
+                                    ],
+                                    "properties": {
+                                        "name": {
+                                            "$id": "#/items/anyOf/0/properties/authors/items/anyOf/0/properties/name",
+                                            "type": "string",
+                                            "title": "The name schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": "",
+                                            "examples": [
+                                                "Jane"
+                                            ]
+                                        },
+                                        "surname": {
+                                            "$id": "#/items/anyOf/0/properties/authors/items/anyOf/0/properties/surname",
+                                            "type": "string",
+                                            "title": "The surname schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": "",
+                                            "examples": [
+                                                "Austen"
+                                            ]
+                                        }
+                                    },
+                                    "additionalProperties": true
+                                }
+                            ]
+                        }
+                    },
+                    "country": {
+                        "$id": "#/items/anyOf/0/properties/country",
+                        "type": "string",
+                        "title": "The country schema",
+                        "description": "An explanation about the purpose of this instance.",
+                        "default": "",
+                        "examples": [
+                            "United Kingdom"
+                        ]
+                    }
+                },
+                "additionalProperties": true
+            }
+        ]
+    }
+}
