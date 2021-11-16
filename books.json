@@ -17,7 +17,8 @@
                                 "surname": "Austen"
                         }
                 ],
-                "country": "United Kingdom"
+                "country": "United Kingdom",
+                "media_type": "Print"
         },
         {
                 "_id": "617fc40ba7c488ce95fb5fe8",
@@ -40,7 +41,8 @@
                                 "surname": "Lee"
                         }
                 ],
-                "country": "United States"
+                "country": "United States",
+                "media_type": "Print"
         },
         {
                 "_id": "617fc609a7c488ce95fb5fe9",
@@ -79,7 +81,8 @@
                                 "surname": "Capote"
                         }
                 ],
-                "country": "United States"
+                "country": "United States",
+                "media_type": "Print"
         },
         {
                 "_id": "617fc77ba7c488ce95fb5fee",
@@ -97,7 +100,8 @@
                                 "surname": "Rhys"
                         }
                 ],
-                "country": "United Kingdom"
+                "country": "United Kingdom",
+                "media_type": "Print"
         },
         {
                 "_id": "617fc800a7c488ce95fb5fef",
@@ -116,7 +120,8 @@
                                 "surname": "Huxley"
                         }
                 ],
-                "country": "United Kingdom"
+                "country": "United Kingdom",
+                "media_type": "Print"
         },
         {
                 "_id": "617fc872a7c488ce95fb5ff1",
@@ -137,7 +142,8 @@
                                 "surname": "Smith"
                         }
                 ],
-                "country": "United Kingdom"
+                "country": "United Kingdom",
+                "media_type": "Print"
         },
         {
                 "_id": "617fc8e7a7c488ce95fb5ff2",
@@ -161,7 +167,8 @@
                                 "surname": "Bronte"
                         }
                 ],
-                "country": "United Kingdom"
+                "country": "United Kingdom",
+                "media_type": "Print"
         },
         {
                 "_id": "617fc987a7c488ce95fb5ff3",
@@ -181,7 +188,8 @@
                                 "surname": "Dostoevsky"
                         }
                 ],
-                "country": "Russia"
+                "country": "Russia",
+                "media_type": "Print"
         },
         {
                 "_id": "617fca03a7c488ce95fb5ff4",
@@ -199,6 +207,7 @@
                                 "surname": "London"
                         }
                 ],
-                "country": "United States"
+                "country": "United States",
+                "media_type": "Print"
         }
 ]
