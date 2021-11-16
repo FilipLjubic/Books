@@ -1,0 +1,213 @@
+[
+        {
+                "_id": "617fc18da7c488ce95fb5fe0",
+                "title": "Pride and Prejudice",
+                "description": "When Elizabeth Bennet first meets eligible bachelor Fitzwilliam Darcy, she thinks him arrogant and conceited; he is indifferent to her good looks and lively mind. When she later discovers that Darcy has involved himself in the troubled relationship between his friend Bingley and her beloved sister Jane, she is determined to dislike him more than ever. In the sparkling comedy of manners that follows, Jane Austen shows the folly of judging by first impressions and superbly evokes the friendships, gossip and snobberies of provincial middle-class life.",
+                "published": "1813-01-27 22:36:00",
+                "isbn": 9780141199078,
+                "genres": [
+                        "Fiction",
+                        "Romance novel, Satire",
+                        "Novel of manners"
+                ],
+                "originalLanguage": "English",
+                "authors": [
+                        {
+                                "name": "Jane",
+                                "surname": "Austen"
+                        }
+                ],
+                "country": "United Kingdom",
+                "media_type": "Print"
+        },
+        {
+                "_id": "617fc40ba7c488ce95fb5fe8",
+                "title": "To Kill A Mockingbird",
+                "description": "A lawyer's advice to his children as he defends the real mockingbird of Harper Lee's classic novel - a black man falsely charged with the rape of a white girl. Through the young eyes of Scout and Jem Finch, Harper Lee explores with exuberant humour the irrationality of adult attitudes to race and class in the Deep South of the 1930s. The conscience of a town steeped in prejudice, violence and hypocrisy is pricked by the stamina of one man's struggle for justice. But the weight of history will only tolerate so much.",
+                "published": "1960-11-06 23:00:00",
+                "isbn": 9781784752637,
+                "genres": [
+                        "Novel",
+                        "Bildungsroman",
+                        "Southern Gothic",
+                        "Thriller",
+                        "Domestic Fiction",
+                        "Legal Story"
+                ],
+                "originalLanguage": "English",
+                "authors": [
+                        {
+                                "name": "Harper",
+                                "surname": "Lee"
+                        }
+                ],
+                "country": "United States",
+                "media_type": "Print"
+        },
+        {
+                "_id": "617fc609a7c488ce95fb5fe9",
+                "title": "The Great Gatsby",
+                "description": "Jay Gatsby is the man who has everything. Everybody who is anybody is seen at his glittering parties. Day and night his Long Island mansion buzzes with bright young things drinking, dancing and debating his mysterious character. For Gatsby - young, handsome, fabulously rich - always seems alone in the crowd, watching and waiting, though no one knows what for. Beneath the shimmering surface of his life he is hiding a secret: a silent longing for the one thing that will always be out of his reach. And soon this destructive obsession will force his world to unravel.",
+                "published": "1925-10-03 23:00:00",
+                "isbn": 9780141182636,
+                "genres": [
+                        "Historical Fiction"
+                ],
+                "originalLanguage": "English",
+                "authors": [
+                        {
+                                "name": "F.Scott",
+                                "surname": "Fitzgerald"
+                        }
+                ],
+                "country": "United States"
+        },
+        {
+                "_id": "617fc706a7c488ce95fb5fec",
+                "title": "In Cold Blood",
+                "description": "Controversial and compelling, In Cold Blood reconstructs the murder in 1959 of a Kansas farmer, his wife and both their children. Truman Capote's comprehensive study of the killings and subsequent investigation explores the circumstances surrounding this terrible crime and the effect it had on those involved. At the centre of his study are the amoral young killers Perry Smith and Dick Hickcock, who, vividly drawn by Capote, are shown to be reprehensible yet entirely and frighteningly human.",
+                "published": "1964-12-31 23:00:00",
+                "isbn": 9780141182575,
+                "genres": [
+                        "Novel",
+                        "True crime",
+                        "Non-fiction novel",
+                        "Crime Fiction"
+                ],
+                "originalLanguage": "English",
+                "authors": [
+                        {
+                                "name": "Truman",
+                                "surname": "Capote"
+                        }
+                ],
+                "country": "United States",
+                "media_type": "Print"
+        },
+        {
+                "_id": "617fc77ba7c488ce95fb5fee",
+                "title": "Wide Sargasso Sea",
+                "description": "Born into the oppressive, colonialist society of 1930s Jamaica, white Creole heiress Antoinette Cosway meets a young Englishman who is drawn to her innocent beauty and sensuality. After their marriage, however, disturbing rumours begin to circulate which poison her husband against her. Caught between his demands and her own precarious sense of belonging, Antoinette is inexorably driven towards madness, and her husband into the arms of another novel's heroine. This classic study of betrayal, a seminal work of postcolonial literature, is Jean Rhys's brief, beautiful masterpiece.",
+                "published": "1966-01-09 23:00:00",
+                "isbn": 9780241281901,
+                "genres": [
+                        "Postmodern novel"
+                ],
+                "originalLanguage": "English",
+                "authors": [
+                        {
+                                "name": "Jean",
+                                "surname": "Rhys"
+                        }
+                ],
+                "country": "United Kingdom",
+                "media_type": "Print"
+        },
+        {
+                "_id": "617fc800a7c488ce95fb5fef",
+                "title": "Brave New World",
+                "description": "Far in the future, the World Controllers have created the ideal society. Through clever use of genetic engineering, brainwashing and recreational sex and drugs all its members are happy consumers. Bernard Marx seems alone harbouring an ill-defined longing to break free. A visit to one of the few remaining Savage Reservations where the old, imperfect life still continues, may be the cure for his distress...",
+                "published": "1931-12-31 23:00:00",
+                "isbn": 9781784870140,
+                "genres": [
+                        "Science fiction",
+                        "dystopian fiction"
+                ],
+                "originalLanguage": "English",
+                "authors": [
+                        {
+                                "name": "Aldous",
+                                "surname": "Huxley"
+                        }
+                ],
+                "country": "United Kingdom",
+                "media_type": "Print"
+        },
+        {
+                "_id": "617fc872a7c488ce95fb5ff1",
+                "title": "I Capture the Castle",
+                "description": "\"I write this sitting in the kitchen sink\" is the memorable first line of this enchanting coming-of-age story, told in the form of Cassandra Mortmain's journal. Cassandra wittily describes life growing up in a crumbling castle, with her father who suffers from crippling writer's block, her glamorous but ineffectual step-mother and her vain but beloved sister Rose. When two visiting Americans arrive, all of their lives are turned upside down, and Cassandra experiences her first love.",
+                "published": "1947-12-31 23:00:00",
+                "isbn": 9780141371504,
+                "genres": [
+                        "Novel",
+                        "Romance novel",
+                        "Comedy",
+                        "Domestic Fiction"
+                ],
+                "originalLanguage": "English",
+                "authors": [
+                        {
+                                "name": "Dodie",
+                                "surname": "Smith"
+                        }
+                ],
+                "country": "United Kingdom",
+                "media_type": "Print"
+        },
+        {
+                "_id": "617fc8e7a7c488ce95fb5ff2",
+                "title": "Jane Eyre",
+                "description": "Charlotte Bront\u00eb's first published novel, Jane Eyre was immediately recognised as a work of genius when it appeared in 1847. Orphaned into the household of her Aunt Reed at Gateshead, subject to the cruel regime at Lowood charity school, Jane Eyre nonetheless emerges unbroken in spirit and integrity. How she takes up the post of governess at Thornfield Hall, meets and loves Mr Rochester and discovers the impediment to their lawful marriage are elements in a story that transcends melodrama to portray a woman's passionate search for a wider and richer life than that traditionally accorded to her sex in Victorian society.",
+                "published": "1847-10-15 22:36:00",
+                "isbn": 9780141040387,
+                "genres": [
+                        "Novel",
+                        "Romance novel",
+                        "Gothic fiction",
+                        "Bildungsroman",
+                        "Fictional Autobiography",
+                        "Social criticism",
+                        "Romantic Suspense"
+                ],
+                "originalLanguage": "English",
+                "authors": [
+                        {
+                                "name": "Charlotte",
+                                "surname": "Bronte"
+                        }
+                ],
+                "country": "United Kingdom",
+                "media_type": "Print"
+        },
+        {
+                "_id": "617fc987a7c488ce95fb5ff3",
+                "title": "Crime and Punishment",
+                "description": "Dostoyevsky's great novel of damnation and redemption evokes a world where the lines between innocence and corruption, good and evil, blur. It tells the story of Raskolnikov, a destitute and desperate former student, who wanders through the slums of St Petersburg and commits a random murder without remorse or regret. He imagines himself to be beyond conventional moral laws. But as he embarks on a dangerous game of cat and mouse with a police investigator, Raskolnikov is pursued by the growing voice of his conscience and finds the noose of his own guilt tightening around his neck.",
+                "published": "1865-12-31 22:36:00",
+                "isbn": 9780140449136,
+                "genres": [
+                        "Philosophical novel",
+                        "Psychological fiction",
+                        "Crime fiction"
+                ],
+                "originalLanguage": "Russian",
+                "authors": [
+                        {
+                                "name": "Fyodor",
+                                "surname": "Dostoevsky"
+                        }
+                ],
+                "country": "Russia",
+                "media_type": "Print"
+        },
+        {
+                "_id": "617fca03a7c488ce95fb5ff4",
+                "title": "The Call of the Wild",
+                "description": "In The Call of the Wild life is good for Buck in Santa Clara Valley, where he spends his days eating and sleeping in the golden sunshine. But one day a treacherous act of betrayal leads to his kidnap, and he is forced into a life of toil and danger. Dragged away to be a sledge dog in the harsh and freezing cold Yukon, Buck must fight for his survivial. Can he rise above his enemies and become the master of his realm once again?",
+                "published": "1902-12-31 22:36:00",
+                "isbn": 9780141321059,
+                "genres": [
+                        "Adventure fiction"
+                ],
+                "originalLanguage": "English",
+                "authors": [
+                        {
+                                "name": "Jack",
+                                "surname": "London"
+                        }
+                ],
+                "country": "United States",
+                "media_type": "Print"
+        }
+]
