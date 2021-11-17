@@ -11,8 +11,8 @@
                 "_id": "617fc18da7c488ce95fb5fe0",
                 "title": "Pride and Prejudice",
                 "description": "When Elizabeth Bennet first meets eligible bachelor Fitzwilliam Darcy, she thinks him arrogant and conceited; he is indifferent to her good looks and lively mind. When she later discovers that Darcy has involved himself in the troubled relationship between his friend Bingley and her beloved sister Jane, she is determined to dislike him more than ever. In the sparkling comedy of manners that follows, Jane Austen shows the folly of judging by first impressions and superbly evokes the friendships, gossip and snobberies of provincial middle-class life.",
-                "published": "1813-01-27 22:36:00",
-                "isbn": 9780141199078,
+                "published": "1813-01-27T22:36:00.000Z",
+                "isbn": "9780141199078",
                 "genres": [
                     "Fiction",
                     "Romance novel, Satire",
@@ -21,6 +21,7 @@
                 "originalLanguage": "English",
                 "authors": [
                     {
+                        "_id": "617fc095a7c488ce95fb5fd6",
                         "name": "Jane",
                         "surname": "Austen"
                     }
@@ -32,8 +33,8 @@
                 "_id": "617fc40ba7c488ce95fb5fe8",
                 "title": "To Kill A Mockingbird",
                 "description": "A lawyer's advice to his children as he defends the real mockingbird of Harper Lee's classic novel - a black man falsely charged with the rape of a white girl. Through the young eyes of Scout and Jem Finch, Harper Lee explores with exuberant humour the irrationality of adult attitudes to race and class in the Deep South of the 1930s. The conscience of a town steeped in prejudice, violence and hypocrisy is pricked by the stamina of one man's struggle for justice. But the weight of history will only tolerate so much.",
-                "published": "1960-11-06 23:00:00",
-                "isbn": 9781784752637,
+                "published": "1960-11-06T23:00:00.000Z",
+                "isbn": "9781784752637",
                 "genres": [
                     "Novel",
                     "Bildungsroman",
@@ -45,6 +46,7 @@
                 "originalLanguage": "English",
                 "authors": [
                     {
+                        "_id": "617fc0bca7c488ce95fb5fd7",
                         "name": "Harper",
                         "surname": "Lee"
                     }
@@ -69,8 +71,8 @@
                         "_id": "617fc18da7c488ce95fb5fe0",
                         "title": "Pride and Prejudice",
                         "description": "When Elizabeth Bennet first meets eligible bachelor Fitzwilliam Darcy, she thinks him arrogant and conceited; he is indifferent to her good looks and lively mind. When she later discovers that Darcy has involved himself in the troubled relationship between his friend Bingley and her beloved sister Jane, she is determined to dislike him more than ever. In the sparkling comedy of manners that follows, Jane Austen shows the folly of judging by first impressions and superbly evokes the friendships, gossip and snobberies of provincial middle-class life.",
-                        "published": "1813-01-27 22:36:00",
-                        "isbn": 9780141199078,
+                        "published": "1813-01-27T22:36:00.000Z",
+                        "isbn": "9780141199078",
                         "genres": [
                             "Fiction",
                             "Romance novel, Satire",
@@ -79,6 +81,7 @@
                         "originalLanguage": "English",
                         "authors": [
                             {
+                                "_id": "617fc095a7c488ce95fb5fd6",
                                 "name": "Jane",
                                 "surname": "Austen"
                             }
@@ -137,17 +140,17 @@
                         "description": "An explanation about the purpose of this instance.",
                         "default": "",
                         "examples": [
-                            "1813-01-27 22:36:00"
+                            "1813-01-27T22:36:00.000Z"
                         ]
                     },
                     "isbn": {
                         "$id": "#/items/anyOf/0/properties/isbn",
-                        "type": "integer",
+                        "type": "string",
                         "title": "The isbn schema",
                         "description": "An explanation about the purpose of this instance.",
-                        "default": 0,
+                        "default": "",
                         "examples": [
-                            9780141199078
+                            "9780141199078"
                         ]
                     },
                     "genres": {
@@ -199,6 +202,7 @@
                         "examples": [
                             [
                                 {
+                                    "_id": "617fc095a7c488ce95fb5fd6",
                                     "name": "Jane",
                                     "surname": "Austen"
                                 }
@@ -216,15 +220,27 @@
                                     "default": {},
                                     "examples": [
                                         {
+                                            "_id": "617fc095a7c488ce95fb5fd6",
                                             "name": "Jane",
                                             "surname": "Austen"
                                         }
                                     ],
                                     "required": [
+                                        "_id",
                                         "name",
                                         "surname"
                                     ],
                                     "properties": {
+                                        "_id": {
+                                            "$id": "#/items/anyOf/0/properties/authors/items/anyOf/0/properties/_id",
+                                            "type": "string",
+                                            "title": "The _id schema",
+                                            "description": "An explanation about the purpose of this instance.",
+                                            "default": "",
+                                            "examples": [
+                                                "617fc095a7c488ce95fb5fd6"
+                                            ]
+                                        },
                                         "name": {
                                             "$id": "#/items/anyOf/0/properties/authors/items/anyOf/0/properties/name",
                                             "type": "string",
@@ -264,7 +280,7 @@
                     "media_type": {
                         "$id": "#/items/anyOf/0/properties/media_type",
                         "type": "string",
-                        "title": "The media type schema",
+                        "title": "The media_type schema",
                         "description": "An explanation about the purpose of this instance.",
                         "default": "",
                         "examples": [
