@@ -16,7 +16,7 @@ import { NextPage } from "next";
 import React, { FC, useEffect, useState } from "react";
 import { Books } from "../types";
 
-const queryTypes = ["Wildcard", "Title", "Description", "Language", "Country"];
+const queryTypes = ["Wildcard", "Title", "Author Name", "Author Surname", "Description", "Date Published", "ISBN","Genre", "Language", "Country", "Media Type"];
 
 const BookTable: FC<Books> = ({ books }) => {
   return (
@@ -31,6 +31,8 @@ const BookTable: FC<Books> = ({ books }) => {
           <Th>Genres</Th>
           <Th>Language</Th>
           <Th>Country</Th>
+          <Th>Media Type</Th>
+
         </Tr>
       </Thead>
       <Tbody>
@@ -50,6 +52,7 @@ const BookTable: FC<Books> = ({ books }) => {
             <Td maxW="200px">{book.genres.join(", ")}</Td>
             <Td>{book.originalLanguage}</Td>
             <Td>{book.country}</Td>
+            <Td>{book.media_type}</Td>
           </Tr>
         ))}
       </Tbody>
