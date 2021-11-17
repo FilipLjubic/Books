@@ -137,28 +137,6 @@ const Home: NextPage = () => {
         <meta name="author" content="Filip Ljubić" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-
-      <HStack spacing="4" p="4">
-        <Select
-          onChange={(e) => {
-            setSelectedField(e.target.value);
-          }}
-        >
-          {queryTypes.map((type) => (
-            <option value={type} key={type}>
-              {type}
-            </option>
-          ))}
-        </Select>
-        <Input
-          onChange={(e) => {
-            setSearchValue(e.target.value);
-          }}
-          value={searchValue}
-        />
-        <Button onClick={search}>Submit</Button>
-      </HStack>
-      <BookTable books={books} />
       <Text>Download data:</Text>
       <Flex>
         <a href="/books.csv" download>
@@ -187,6 +165,28 @@ const Home: NextPage = () => {
           <Button m="2">Download filtered JSON file</Button>
         </a>
       </Flex>
+
+      <HStack spacing="4" p="4">
+        <Select
+          onChange={(e) => {
+            setSelectedField(e.target.value);
+          }}
+        >
+          {queryTypes.map((type) => (
+            <option value={type} key={type}>
+              {type}
+            </option>
+          ))}
+        </Select>
+        <Input
+          onChange={(e) => {
+            setSearchValue(e.target.value);
+          }}
+          value={searchValue}
+        />
+        <Button onClick={search}>Submit</Button>
+      </HStack>
+      <BookTable books={books} />
     </>
   );
 };
