@@ -5,6 +5,7 @@ import {
   Select,
   Table,
   Tbody,
+  Flex,
   Td,
   Text,
   Th,
@@ -16,7 +17,19 @@ import { NextPage } from "next";
 import React, { FC, useEffect, useState } from "react";
 import { Books } from "../types";
 
-const queryTypes = ["Wildcard", "Title", "Author Name", "Author Surname", "Description", "Date Published", "ISBN","Genre", "Language", "Country", "Media Type"];
+const queryTypes = [
+  "Wildcard",
+  "Title",
+  "Author Name",
+  "Author Surname",
+  "Description",
+  "Date Published",
+  "ISBN",
+  "Genre",
+  "Language",
+  "Country",
+  "Media Type",
+];
 
 const BookTable: FC<Books> = ({ books }) => {
   return (
@@ -32,7 +45,6 @@ const BookTable: FC<Books> = ({ books }) => {
           <Th>Language</Th>
           <Th>Country</Th>
           <Th>Media Type</Th>
-
         </Tr>
       </Thead>
       <Tbody>
@@ -62,13 +74,11 @@ const BookTable: FC<Books> = ({ books }) => {
 
 const Home: NextPage = () => {
   const [books, setBooks] = useState<Books>([]);
-  const [loading, setLoading] = useState(true);
   const [selectedField, setSelectedField] = useState(queryTypes[0]);
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     const getInitialData = async () => {
-      setLoading(true);
 
       try {
         const response = await axios.get<Books>(`http://localhost:9001/`);
@@ -76,8 +86,6 @@ const Home: NextPage = () => {
         setBooks(response.data);
       } catch (error) {
         console.error(error);
-      } finally {
-        setLoading(false);
       }
     };
 
@@ -85,7 +93,6 @@ const Home: NextPage = () => {
   }, []);
 
   const search = async () => {
-    setLoading(true);
 
     try {
       const response = await axios.get<Books>(
@@ -98,10 +105,24 @@ const Home: NextPage = () => {
 
       setBooks(response.data);
     } catch (error) {
-    } finally {
-      setLoading(false);
-    }
+    } 
   };
+
+  const booksToCsv = (books) => {
+    console.log(books);
+    const csvRows = [];
+    for (let book of books){
+      for (let author of book['authors']){
+        for (let genre of book['genres']){
+          let {name, surname} = author
+          let csv = [book['_id'], book['title'], book['description'], book['published'],
+                 book['isbn'].toString(), book['originalLanguage'], name, surname, genre, book['country'], book['media_type']]
+          csvRows.push(csv)
+        }
+      }
+    }
+    return csvRows.join("\n").toString()
+  }
 
   return (
     <>
@@ -139,13 +160,33 @@ const Home: NextPage = () => {
       </HStack>
       <BookTable books={books} />
       <Text>Download data:</Text>
-      <a href="/books.csv" download>
-        <Button m="2">Download CSV file</Button>
-      </a>
+      <Flex>
+        <a href="/books.csv" download>
+          <Button m="2">Download CSV file</Button>
+        </a>
+        <a
+          href={`data:text/json;charset=utf-8,${encodeURIComponent(
+            booksToCsv(books)
+          )}`}
+          download="books.csv"
+        >
+          <Button m="2">Download filtered CSV file</Button>
+        </a>
+      </Flex>
       <br />
-      <a href="/books.json" download>
-        <Button m="2">Download JSON file</Button>
-      </a>
+      <Flex>
+        <a href="/books.json" download>
+          <Button m="2">Download JSON file</Button>
+        </a>
+        <a
+          href={`data:text/json;charset=utf-8,${encodeURIComponent(
+            JSON.stringify(books)
+          )}`}
+          download="books.json"
+        >
+          <Button m="2">Download filtered JSON file</Button>
+        </a>
+      </Flex>
     </>
   );
 };

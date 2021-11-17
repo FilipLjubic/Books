@@ -49,27 +49,28 @@ app.get('/', async (req, res) => {
 
     await connect();
 
+    let filteredBooks = await getFilteredBooks(search, queryType);
+
+    return res.json(filteredBooks);
+})
+
+app.listen(PORT, () => console.log(`server running on port ${PORT}`));
+
+const getFilteredBooks = async (search, queryType) => {
     const isWildcardQuery = queryType < 0;
 
-
-    // const query = isWildcardQuery ? queryTypes.map(queryType => ({
-    //     [queryType]: {
-    //         $regex: '^' + search,
-    //         $options: 'i'
-    //     }
-    // })) : [{
-    //     [queryTypes[queryType]]: {
-    //         $regex: '^' + search,
-    //         $options: 'i'
-    //     }
-    // }];
-
-
     const books = await Book.find({
-        // $or: query
     }).populate('authors').select();
 
+    let filteredBooks = filterBooks(books, search, isWildcardQuery, queryType);
+
+    return filteredBooks;
+}
+
+
+const filterBooks = (books, search, isWildcardQuery, queryType) => {
     let filteredBooks = [];
+
     if(search === ''){
         filteredBooks = books;
     } else {
@@ -147,20 +148,5 @@ app.get('/', async (req, res) => {
             }
             }
     }
-
-    // idk lol, mozda umjesto ovaj $or samo ic po svim responseovima i filtrirati slicno kao u ovom forEachu
-    // 
-    // let tutorials = [];
-
-    // books.forEach((book) => {
-    //   const { _id, title, description, originalLanguage, country } = book;
-    //   tutorials.push({ id, title, description, originalLanguage, country });
-    // });
-    // res.setHeader("Content-Type", "text/csv");
-    // res.setHeader("Content-Disposition", "attachment; filename=tutorials.csv");
-
-    // res.status(200).end(csvData);
-    return res.json(filteredBooks);
-})
-
-app.listen(PORT, () => console.log(`server running on port ${PORT}`));
+    return filteredBooks;
+}
