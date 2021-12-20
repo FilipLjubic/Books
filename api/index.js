@@ -1,152 +1,37 @@
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const CsvParser = require("json2csv").Parser;
+require("dotenv").config();
+const express = require("express");
+const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.use(bodyParser.json());
+
+const booksRouter = require("./routes/books");
+const authorsRouter = require("./routes/authors");
+
 app.use(cors());
 
-const queryTypes = ['title', 'name', 'surname', 'description','published','isbn','genre', 'originalLanguage', 'country', 'media_type']
+app.use("/books", booksRouter);
+app.use("/authors", authorsRouter);
 
 const PORT = process.env.PORT || 9001;
 
-const connect = async () => {
-    return await mongoose.connect(process.env.MONGODB_URI);
-}
-
-const bookSchema = new mongoose.Schema({
-    _id: mongoose.Types.ObjectId,
-    title: String,
-    authors: [{
-        type: mongoose.Schema.ObjectId,
-        ref: 'Author'
-    }],
-    description: String,
-    published: Date,
-    isbn: String,
-    genres: [String],
-    originalLanguage: String,
-    country: String,
-    media_type: String,
-})
-
-const Book = mongoose.model('Book', bookSchema);
-
-const authorSchema = new mongoose.Schema({
-    _id: mongoose.Types.ObjectId,
-    name: String,
-    surname: String
-})
-
-const Author = mongoose.model('Author', authorSchema)
-
-app.get('/', async (req, res) => {
-    const search = (req.query?.search ?? '').toLowerCase();
-
-    const queryType = Number(req.query?.type ?? '-1');
-
-    await connect();
-
-    let filteredBooks = await getFilteredBooks(search, queryType);
-
-    return res.json(filteredBooks);
-})
-
 app.listen(PORT, () => console.log(`server running on port ${PORT}`));
 
-const getFilteredBooks = async (search, queryType) => {
-    const isWildcardQuery = queryType < 0;
+// catch 404 and forward to error handler
+app.use(function (err, req, res, next) {
+  if (err.type === "not-found") {
+    res.status(404).send(err);
+  } else if (err.type === "bad-request") {
+    res.status(400).send(err);
+  } else if (err.type === "precondition-required") {
+    res.status(428).send(err);
+  } else {
+    res.sendStatus(500);
+  }
+});
 
-    const books = await Book.find({
-    }).populate('authors').select();
-
-    let filteredBooks = filterBooks(books, search, isWildcardQuery, queryType);
-
-    return filteredBooks;
-}
-
-
-const filterBooks = (books, search, isWildcardQuery, queryType) => {
-    let filteredBooks = [];
-
-    if(search === ''){
-        filteredBooks = books;
-    } else {
-        
-        for (let book of books) {
-            let {
-                title,
-                description,
-                published,
-                isbn,
-                genres,
-                originalLanguage,
-                authors,
-                country,
-                media_type
-            } = book;
-                if(isWildcardQuery){
-    
-                let pushed = false;
-        
-                if (title.toLowerCase().indexOf(search) > -1 || description.toLowerCase().indexOf(search) > -1 ||
-                    published.toString().indexOf(search) > -1 || isbn.toString().indexOf(search) > -1 ||
-                    originalLanguage.toLowerCase().indexOf(search) > -1 || country.indexOf(search) > -1 || media_type.toLowerCase().indexOf(search) > -1
-                ) {
-                    filteredBooks.push(book);
-                   continue;
-                }
-    
-                for(let author of authors){
-                    let {name, surname} = author;
-                    if(name.toLowerCase().indexOf(search) > -1 || surname.toLowerCase().indexOf(search) > -1){
-                        filteredBooks.push(book);                    
-                    pushed = true;
-    
-                    }
-                }
-                if(pushed){
-                    continue;
-                }
-    
-                for(let genre of genres){
-                    if(genre.toLowerCase().indexOf(search) > -1 ){
-                        filteredBooks.push(book);
-                    }
-                }
-            } else {
-                const type = queryTypes[queryType];
-                
-                if(type === 'genre'){
-                    for(let genre of genres){
-                        if(genre.toLowerCase().indexOf(search) > -1 ){
-                            filteredBooks.push(book);
-                        }
-                    }   
-                } else if (type === 'name' || type == 'surname'){
-                    for(let author of authors){
-                        let {name, surname} = author;
-                        if(name.toLowerCase().indexOf(search) > -1 || surname.toLowerCase().indexOf(search) > -1){
-                            filteredBooks.push(book);                    
-        
-                        }
-                    }
-                } else {
-                    if(typeof book[type] === 'String'){
-
-                        if(book[type].toLowerCase().indexOf(search) > -1){
-                            filteredBooks.push(book);
-                        }
-                    } else {
-                        if(book[type].toString().toLowerCase().indexOf(search) > -1){
-                            filteredBooks.push(book);
-                        }
-                    }
-                }
-            }
-            }
-    }
-    return filteredBooks;
-}
+module.exports = app;

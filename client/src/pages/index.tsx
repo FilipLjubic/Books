@@ -79,9 +79,8 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     const getInitialData = async () => {
-
       try {
-        const response = await axios.get<Books>(`http://localhost:9001/`);
+        const response = await axios.get<Books>(`http://localhost:9001/books/`);
 
         setBooks(response.data);
       } catch (error) {
@@ -93,10 +92,9 @@ const Home: NextPage = () => {
   }, []);
 
   const search = async () => {
-
     try {
       const response = await axios.get<Books>(
-        `http://localhost:9001/?search=${searchValue}&type=${
+        `http://localhost:9001/books/?search=${searchValue}&type=${
           queryTypes.indexOf(selectedField) - 1
         }`
       );
@@ -104,25 +102,35 @@ const Home: NextPage = () => {
       console.log(response.data);
 
       setBooks(response.data);
-    } catch (error) {
-    } 
+    } catch (error) {}
   };
 
   const booksToCsv = (books) => {
     console.log(books);
     const csvRows = [];
-    for (let book of books){
-      for (let author of book['authors']){
-        for (let genre of book['genres']){
-          let {name, surname} = author
-          let csv = [book['_id'], book['title'], book['description'], book['published'],
-                 book['isbn'].toString(), book['originalLanguage'], name, surname, genre, book['country'], book['media_type']]
-          csvRows.push(csv)
+    for (let book of books) {
+      for (let author of book["authors"]) {
+        for (let genre of book["genres"]) {
+          let { name, surname } = author;
+          let csv = [
+            book["_id"],
+            book["title"],
+            book["description"],
+            book["published"],
+            book["isbn"].toString(),
+            book["originalLanguage"],
+            name,
+            surname,
+            genre,
+            book["country"],
+            book["media_type"],
+          ];
+          csvRows.push(csv);
         }
       }
     }
-    return csvRows.join("\n").toString()
-  }
+    return csvRows.join("\n").toString();
+  };
 
   return (
     <>
