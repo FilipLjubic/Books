@@ -32,19 +32,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/:id/", async (req, res, next) => {
-  try {
-    await connect();
-
-    const authors = await Author.findById(req.params.id).select();
-
-    return res.json(authors);
-  } catch (err) {
-    err.type = "not-found";
-    next(err);
-  }
-});
-
 router.post("/", async (req, res, next) => {
   try {
     await connect();
@@ -57,6 +44,19 @@ router.post("/", async (req, res, next) => {
   } catch (err) {
     err.type = "bad-request";
 
+    next(err);
+  }
+});
+
+router.get("/:id/", async (req, res, next) => {
+  try {
+    await connect();
+
+    const authors = await Author.findById(req.params.id).select();
+
+    return res.json(authors);
+  } catch (err) {
+    err.type = "not-found";
     next(err);
   }
 });

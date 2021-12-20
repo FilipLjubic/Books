@@ -69,7 +69,7 @@ router.get("/:id/", async (req, res, next) => {
   }
 });
 
-router.get("/:id/authors", async (req, res, next) => {
+router.get("/:id/authors/", async (req, res, next) => {
   try {
     await connect();
 
