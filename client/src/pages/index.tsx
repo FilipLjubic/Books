@@ -1,11 +1,11 @@
 import {
   Button,
+  Flex,
   HStack,
   Input,
   Select,
   Table,
   Tbody,
-  Flex,
   Td,
   Text,
   Th,
@@ -13,9 +13,10 @@ import {
   Tr,
 } from "@chakra-ui/react";
 import axios from "axios";
-import { NextPage } from "next";
 import React, { FC, useEffect, useState } from "react";
+import { NavBar } from "../components/navbar";
 import { Books } from "../types";
+import { Helmet } from "react-helmet";
 
 const queryTypes = [
   "Wildcard",
@@ -72,7 +73,7 @@ const BookTable: FC<Books> = ({ books }) => {
   );
 };
 
-const Home: NextPage = () => {
+const Home: FC = () => {
   const [books, setBooks] = useState<Books>([]);
   const [selectedField, setSelectedField] = useState(queryTypes[0]);
   const [searchValue, setSearchValue] = useState("");
@@ -132,19 +133,55 @@ const Home: NextPage = () => {
     return csvRows.join("\n").toString();
   };
 
+  let schema = JSON.stringify({
+    "@context": {
+      "@vocab": "http://schema.org",
+      media_type: "encodingFormat",
+      originalLanguage: "inLanguage",
+      country: "countryOfOrigin",
+      name: "givenName",
+      surname: "familyName",
+    },
+    "@type": "Book",
+    title: "Pride and Prejudice",
+    description:
+      "When Elizabeth Bennet first meets eligible bachelor Fitzwilliam Darcy, she thinks him arrogant and conceited; he is indifferent to her good looks and lively mind. When she later discovers that Darcy has involved himself in the troubled relationship between his friend Bingley and her beloved sister Jane, she is determined to dislike him more than ever. In the sparkling comedy of manners that follows, Jane Austen shows the folly of judging by first impressions and superbly evokes the friendships, gossip and snobberies of provincial middle-class life.",
+    published: "1960-11-06T23:00:00.000+00:00",
+    isbn: 9781784752637,
+    genres: [
+      "Novel",
+      "Bildungsroman",
+      "Southern Gothic",
+      "Thriller",
+      "Domestic Fiction",
+      "Legal Story",
+    ],
+    originalLanguage: "English",
+    authors: [{ "@type": "Person", name: "Jane", surname: "Austen" }],
+    country: "United Kingdom",
+    media_type: "Print",
+  });
+
   return (
     <>
-      <head>
+      <Helmet>
         <meta
           name="description"
           content="Open source project with open data about books"
         />
         <meta name="title" content="Books" />
-
         <meta name="keywords" content="Books, book authors, isbn" />
         <meta name="author" content="Filip Ljubić" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      </head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schema }}
+        />
+      </Helmet>
+      <NavBar />
+      <Button onClick={() => {}} as="h4" size="md" ml={10} isTruncated>
+        Osvježi preslike
+      </Button>
       <Text>Download data:</Text>
       <Flex>
         <a href="/books.csv" download>
